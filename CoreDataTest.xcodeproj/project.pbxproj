@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		735C78AE1EB355DD00053CAC /* ASDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C78AD1EB355DD00053CAC /* ASDataManager.m */; };
+		735C78B11EB35F9300053CAC /* ASUniversityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C78B01EB35F9300053CAC /* ASUniversityViewController.m */; };
+		735C78B41EB3618A00053CAC /* ASCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735C78B31EB3618A00053CAC /* ASCoreDataViewController.m */; };
 		73FB49ED1EA6049B00270B01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FB49EC1EA6049B00270B01 /* main.m */; };
 		73FB49F01EA6049B00270B01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73FB49EF1EA6049B00270B01 /* AppDelegate.m */; };
 		73FB49F21EA6049B00270B01 /* CoreDataTest-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 73FB49F11EA6049B00270B01 /* CoreDataTest-Prefix.pch */; };
@@ -16,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		735C78AC1EB355DD00053CAC /* ASDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDataManager.h; sourceTree = "<group>"; };
+		735C78AD1EB355DD00053CAC /* ASDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDataManager.m; sourceTree = "<group>"; };
+		735C78AF1EB35F9300053CAC /* ASUniversityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASUniversityViewController.h; sourceTree = "<group>"; };
+		735C78B01EB35F9300053CAC /* ASUniversityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASUniversityViewController.m; sourceTree = "<group>"; };
+		735C78B21EB3618A00053CAC /* ASCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASCoreDataViewController.h; sourceTree = "<group>"; };
+		735C78B31EB3618A00053CAC /* ASCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASCoreDataViewController.m; sourceTree = "<group>"; };
 		73FB49E81EA6049B00270B01 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FB49EC1EA6049B00270B01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73FB49EE1EA6049B00270B01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +75,10 @@
 				73FB49FB1EA6049B00270B01 /* Info.plist */,
 				73FB49F31EA6049B00270B01 /* CoreDataTest.xcdatamodeld */,
 				73FB49EB1EA6049B00270B01 /* Supporting Files */,
+				735C78AF1EB35F9300053CAC /* ASUniversityViewController.h */,
+				735C78B01EB35F9300053CAC /* ASUniversityViewController.m */,
+				735C78B21EB3618A00053CAC /* ASCoreDataViewController.h */,
+				735C78B31EB3618A00053CAC /* ASCoreDataViewController.m */,
 			);
 			path = CoreDataTest;
 			sourceTree = "<group>";
@@ -81,6 +94,8 @@
 		73FB4A0A1EA615A100270B01 /* coreDataModel */ = {
 			isa = PBXGroup;
 			children = (
+				735C78AC1EB355DD00053CAC /* ASDataManager.h */,
+				735C78AD1EB355DD00053CAC /* ASDataManager.m */,
 			);
 			name = coreDataModel;
 			sourceTree = "<group>";
@@ -158,8 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73FB49F01EA6049B00270B01 /* AppDelegate.m in Sources */,
+				735C78B11EB35F9300053CAC /* ASUniversityViewController.m in Sources */,
 				73FB49F51EA6049B00270B01 /* CoreDataTest.xcdatamodeld in Sources */,
 				73FB49ED1EA6049B00270B01 /* main.m in Sources */,
+				735C78AE1EB355DD00053CAC /* ASDataManager.m in Sources */,
+				735C78B41EB3618A00053CAC /* ASCoreDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
