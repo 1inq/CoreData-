@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="ASCar" representedClassName="ASCar" parentEntity="ASObject" syncable="YES" codeGenerationType="class">
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASStudent" inverseName="car" inverseEntity="ASStudent" syncable="YES"/>
+    </entity>
+    <entity name="ASCourse" representedClassName="ASCourse" parentEntity="ASObject" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ASStudent" inverseName="courses" inverseEntity="ASStudent" syncable="YES"/>
+        <relationship name="university" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASUniversity" inverseName="courses" inverseEntity="ASUniversity" syncable="YES"/>
+    </entity>
+    <entity name="ASObject" representedClassName="ASObject" isAbstract="YES" syncable="YES" codeGenerationType="class"/>
+    <entity name="ASStudent" representedClassName="ASStudent" parentEntity="ASObject" syncable="YES" codeGenerationType="class">
+        <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="favoriteColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ASCar" inverseName="owner" inverseEntity="ASCar" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ASCourse" inverseName="students" inverseEntity="ASCourse" syncable="YES"/>
+        <relationship name="university" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASUniversity" inverseName="students" inverseEntity="ASUniversity" syncable="YES"/>
+    </entity>
+    <entity name="ASUniversity" representedClassName="ASUniversity" parentEntity="ASObject" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ASCourse" inverseName="university" inverseEntity="ASCourse" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ASStudent" inverseName="university" inverseEntity="ASStudent" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ASCar" positionX="-7875" positionY="-2793" width="117" height="73"/>
+        <element name="ASCourse" positionX="-8246" positionY="-2815" width="128" height="88"/>
+        <element name="ASObject" positionX="-8136" positionY="-3024" width="128" height="43"/>
+        <element name="ASStudent" positionX="-8046" positionY="-2853" width="117" height="163"/>
+        <element name="ASUniversity" positionX="-8451" positionY="-2778" width="128" height="88"/>
+    </elements>
 </model>

@@ -57,6 +57,7 @@
 		73FB49EA1EA6049B00270B01 /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
+				73FB4A0A1EA615A100270B01 /* coreDataModel */,
 				73FB49EE1EA6049B00270B01 /* AppDelegate.h */,
 				73FB49EF1EA6049B00270B01 /* AppDelegate.m */,
 				73FB49F11EA6049B00270B01 /* CoreDataTest-Prefix.pch */,
@@ -75,6 +76,13 @@
 				73FB49EC1EA6049B00270B01 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73FB4A0A1EA615A100270B01 /* coreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = coreDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +310,7 @@
 				73FB4A001EA6049B00270B01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
