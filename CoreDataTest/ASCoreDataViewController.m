@@ -15,37 +15,55 @@
 
 @implementation ASCoreDataViewController
 
-- (NSManagedObjectContext*) managedObjectContext {
+@synthesize fetchedResultsController = _fetchedResultsController;
+
+- (NSManagedObjectContext*) context {
+    
     if (!_context) {
-        
         _context = [[ASDataManager sharedManager] context];
-        
     }
+    
     return _context;
 }
 
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[self.fetchedResultsController sections] count];
+- (instancetype)init
+{
+    self = [super initWithStyle:UITableViewStylePlain];
+    if (self) {
+        
+    }
+    return self;
 }
 
+#pragma mark - TableViewDataSource 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    NSInteger sections = [[self.fetchedResultsController sections] count];
+    NSLog(@"Total Sections: %d", (int)sections);
+    return sections;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    
+    NSInteger rowsInSection = [sectionInfo numberOfObjects];
+    NSLog(@"Total Rows: %d in the section %d", (int)rowsInSection, (int)section);
+    return rowsInSection;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *identifier  = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
     
-    //NSManagedObject *even = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -75,20 +93,13 @@
 
 #pragma mark - Fetched results controller
 
-- (NSFetchedResultsController *) fetchedResultsController {
+- (NSFetchedResultsController*) fetchedResultsController {
+    return  nil;
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller{
     
-    return nil;
-}
-
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
     [self.tableView beginUpdates];
-}
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView endUpdates];
 }
 
 
@@ -134,8 +145,15 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
     
+    [self.tableView endUpdates];
+}
+
+
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Perant configure cell");
 };
 
 

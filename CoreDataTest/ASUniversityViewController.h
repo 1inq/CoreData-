@@ -11,6 +11,4 @@
 
 @interface ASUniversityViewController : ASCoreDataViewController
 
-
-
 @end

@@ -10,26 +10,31 @@
 #import "ASUniversityViewController.h"
 #import "ASDataManager.h"
 
+#import "ASCourseViewController.h"
+
 
 @interface AppDelegate ()
-
-
 
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-    //[[ASDataManager sharedManager] generateAndAddUniversity];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    [[ASDataManager sharedManager] generateAndAddUniversity];
     
     ASUniversityViewController *vc= [[ASUniversityViewController alloc] initWithStyle:UITableViewStylePlain];
+    //ASCourseViewController *vc= [[ASCourseViewController alloc] initWithStyle:UITableViewStylePlain];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     
     self.window.rootViewController = nav;
     
+    NSLog(@"get ready...");
     return YES;
 }
 
@@ -61,9 +66,5 @@
     // Saves changes in the application's managed object context before the application terminates.
     [[ASDataManager sharedManager] saveContext];
 }
-
-
-
-
 
 @end
